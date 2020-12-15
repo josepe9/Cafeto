@@ -1,9 +1,5 @@
 ﻿using Cafeto.Common.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Cafeto.Web.Data
 {
@@ -17,6 +13,11 @@ namespace Cafeto.Web.Data
         public DbSet<Ciudad> Ciudades { get; set; }
         public DbSet<Corregimiento> Corregimiento { get; set; }
         public DbSet<Vereda> Veredas { get; set; }
+        public DbSet<Finca> Fincas { get; set; }
+        public DbSet<Lote> Lotes { get; set; }
+        public DbSet<Hectarea> Hectareas { get; set; }
+        public DbSet<Parafertil> Parafertils { get; set; }
+        public DbSet<Producto> Productos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,8 +30,6 @@ namespace Cafeto.Web.Data
             modelBuilder.Entity<Ciudad>()
                 .HasIndex(t => t.Codigo)
                 .IsUnique();
-
-           
         }
     }
 }

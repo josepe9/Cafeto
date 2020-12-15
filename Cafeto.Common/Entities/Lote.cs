@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace Cafeto.Common.Entities
 {
@@ -18,5 +16,7 @@ namespace Cafeto.Common.Entities
         public int FincaId { get; set; }
 
         public Finca Finca { get; set; }
+
+        public ICollection<Hectarea> Hectareas { get; set; }
     }
 }
