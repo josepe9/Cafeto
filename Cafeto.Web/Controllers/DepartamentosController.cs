@@ -118,6 +118,7 @@ namespace Cafeto.Web.Controllers
                 {
                     _context.Update(departamento);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateException dbUpdateException)
                 {
@@ -134,8 +135,6 @@ namespace Cafeto.Web.Controllers
                 {
                     ModelState.AddModelError(string.Empty, exception.Message);
                 }
-
-                return RedirectToAction(nameof(Index));
             }
             return View(departamento);
         }

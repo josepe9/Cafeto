@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Cafeto.Common.Entities
@@ -15,5 +16,8 @@ namespace Cafeto.Common.Entities
         public string Nombre { get; set; }
 
         public ICollection<Ciudad> Ciudades { get; set; }
+
+        [DisplayName("Ciudades")]
+        public int Numerociudades => Ciudades == null ? 0 : Ciudades.Count;
     }
 }

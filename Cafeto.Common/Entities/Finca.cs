@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Cafeto.Common.Entities
@@ -30,5 +31,8 @@ namespace Cafeto.Common.Entities
         public Vereda Vereda { get; set; }
 
         public ICollection<Lote> Lotes { get; set; }
+
+        [DisplayName("Lotes")]
+        public int Numerolotes => Lotes == null ? 0 : Lotes.Count;
     }
 }

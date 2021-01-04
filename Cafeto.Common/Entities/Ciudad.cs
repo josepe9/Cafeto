@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Cafeto.Common.Entities
@@ -10,7 +11,7 @@ namespace Cafeto.Common.Entities
 
         [Required]
         public int Codigo { get; set; }
-
+       
         [Required]
         [StringLength(40)]
         public string Nombre { get; set; }
@@ -21,5 +22,8 @@ namespace Cafeto.Common.Entities
         public Departamento Departamento { get; set; }
 
         public ICollection<Corregimiento> Corregimientos { get; set; }
+
+        [DisplayName("Corregimientos")]
+        public int NCorregimientos => Corregimientos == null ? 0 : Corregimientos.Count;
     }
 }

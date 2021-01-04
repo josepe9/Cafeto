@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Cafeto.Common.Entities
@@ -18,5 +19,8 @@ namespace Cafeto.Common.Entities
         public Finca Finca { get; set; }
 
         public ICollection<Hectarea> Hectareas { get; set; }
+
+        [DisplayName("Hectáreas")]
+        public int Numerohectareas => Hectareas == null ? 0 : Hectareas.Count;
     }
 }
